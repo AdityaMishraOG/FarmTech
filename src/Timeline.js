@@ -37,64 +37,53 @@ const PlotArray = ({ id, date, name, array }) => {
     );
 };
 
-class DateForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            date: '',
-        };
-    }
+const DateForm = ({ onDateChange, onSubmit }) => {
+    const [date, setDate] = useState('');
 
-    handledateChange = (event) => {
-        this.setState({ date: event.target.value });
+    const handledateChange = (event) => {
+        const newDate = event.target.value;
+        setDate(newDate);
+        onDateChange(newDate); // Call the callback to update the parent state
     };
 
-
-    handleClick = () => {
-        const { date } = this.state;
-        // Call your function with date and endDate as parameters
-        this.yourFunction(date);
+    const handleClick = () => {
+        onSubmit(); // Call the onSubmit callback
     };
 
-    yourFunction = (date) => {
-        // Replace this with your actual logic using date and endDate
-        console.log('Start Date:', date);
-
-    };
-
-    render() {
-        return (
-            <div className='center'>
-                <div className="inputbox">
-                    <input
-                        type="text"
-                        required="required"
-                        value={this.state.date}
-                        onChange={this.handledateChange}
-                    />
-                    <span>Enter Day</span>
-                </div>
-                <div className="inputbox">
-                    <button id="submit_button" type="button" onClick={this.handleClick}>
-                        Submit
-                    </button>
-                </div>
+    return (
+        <div className='center'>
+            <div className="inputbox">
+                <input
+                    type="text"
+                    required="required"
+                    value={date}
+                    onChange={handledateChange}
+                />
+                <span>Enter Day</span>
             </div>
-        );
-    }
-}
+            <div className="inputbox">
+                <button id="submit_button" type="button" onClick={handleClick}>
+                    Submit
+                </button>
+            </div>
+        </div>
+    );
+};
 
 
-
-
-function Timeline() {
+const Timeline = () => {
     const [arrays, setArrays] = useState([transpose(om2m_data)]);
-
     const [date, setDate] = useState('1');
-    const [formSubmitted, setFormSubmitted] = useState(true);
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
-    console.log(date);
+    const handleDateChange = (newDate) => {
+        setDate(newDate);
+    };
 
+    const handleSubmit = () => {
+        // Add your submission logic here
+        setFormSubmitted(true);
+    };
 
     return (
         <>
@@ -103,9 +92,8 @@ function Timeline() {
                 <h2 style={{ marginTop: "2vh" }}>Timeline</h2>
                 <div className="underline"></div>
             </div>
-            <DateForm />
-
-            {console.log(date)};
+            <DateForm onDateChange={handleDateChange} onSubmit={handleSubmit} />
+            {console.log(date)}
 
             {formSubmitted && (
                 <div id="plots_container">
