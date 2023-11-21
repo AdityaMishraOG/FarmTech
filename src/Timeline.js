@@ -4,12 +4,12 @@ import "./timeline.css"
 import ParseData from './ParseData';
 import LineChart from './LineChart';
 
-const YourComponent = ({ array }) => {
+const PlotArray = ({ array }) => {
     // Assuming you have the array passed as a prop
     const labels = array.map((value, index) => index);
 
     return (
-        <div>
+        <div class="plot_array">
             {/* Other components or content */}
             <LineChart data={array} labels={labels} />
         </div>
@@ -65,7 +65,7 @@ class DateForm extends React.Component {
         console.log(result.array5);
         console.log(result.array6);
 
-        YourComponent(result.array1)
+        PlotArray(result.array1)
 
 
 
@@ -134,14 +134,19 @@ class DateForm extends React.Component {
 
 
 function Timeline() {
-    const [dataArray, setDataArray] = useState([]);
+    const [dataArray, setDataArray] = useState([1, 2, 3, 4]);
     return (
         <>
             <Navbar />
             {/* <h2>Timeline Page</h2> */}
             {/* <NewsletterForm /> */}
-            <DateForm />
-            <YourComponent array={dataArray} />
+            {/* <DateForm /> */}
+            <PlotArray array={dataArray} />
+            <PlotArray array={dataArray} />
+            <PlotArray array={dataArray} />
+            <PlotArray array={dataArray} />
+            <PlotArray array={dataArray} />
+            <PlotArray array={dataArray} />
 
         </>
     );

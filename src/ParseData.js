@@ -39,20 +39,21 @@ function ParseData(htmlText) {
 
 export default ParseData;
 
-const htmlContent = `[400, 34.0, 6.22, 23.48, 1306, 11]
-[454, 28.0, 6.44, 29.66, 994, 4]
-[427, 32.0, 6.46, 24.55, 1377, 5]
-[438, 35.0, 6.28, 30.05, 1350, 2]
-[452, 29.0, 5.6, 26.24, 986, 0]`
+// TEST CODE
+// const htmlContent = `[400, 34.0, 6.22, 23.48, 1306, 11]
+// [454, 28.0, 6.44, 29.66, 994, 4]
+// [427, 32.0, 6.46, 24.55, 1377, 5]
+// [438, 35.0, 6.28, 30.05, 1350, 2]
+// [452, 29.0, 5.6, 26.24, 986, 0]`
 
-const result = ParseData(htmlContent);
+// const result = ParseData(htmlContent);
 
-// Access the arrays from the result object
-console.log(result.array1);
-console.log(result.array2);
-console.log(result.array3);
-console.log(result.array4);
-console.log(result.array5);
-console.log(result.array6);
+// // Access the arrays from the result object
+// console.log(result.array1);
+// console.log(result.array2);
+// console.log(result.array3);
+// console.log(result.array4);
+// console.log(result.array5);
+// console.log(result.array6);
 
 
