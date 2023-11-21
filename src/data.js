@@ -125,8 +125,8 @@ export const sensors = [
     name: "pH Sensor",
     text: "Measures Soil pH",
     link: "https://thingspeak.com/channels/2287877/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH+Sensor&type=line",
-    lower_bound: 0,
-    upper_bound: 14,
+    lower_bound: 5,
+    upper_bound: 7,
     parameter: "pH Value"
   },
   {
@@ -135,7 +135,7 @@ export const sensors = [
     text: "Measures CO2",
     link: "https://thingspeak.com/channels/2287877/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=SGP30++Sensor+%28CO2%29&type=line",
     lower_bound: 400,
-    upper_bound: 700,
+    upper_bound: 500,
     parameter: "CO2in ppm"
   },
   {
@@ -144,7 +144,7 @@ export const sensors = [
     text: "Measures VOC",
     link: "https://thingspeak.com/channels/2287877/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=SGP30+Sensor+%28VOC%29&type=line&yaxis=VOC+in+ppb",
     lower_bound: 0,
-    upper_bound: 25,
+    upper_bound: 20,
     parameter: "VOC in ppb"
   }
 ]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import "./timeline.css"
 import ParseData from './ParseData';
@@ -71,7 +71,32 @@ const DateForm = ({ onDateChange, onSubmit }) => {
 };
 
 
+
+// TIMELINE FUNCTION
 const Timeline = () => {
+
+    // Read Data from .txt
+
+    // Use useEffect to fetch data when the component mounts
+    useEffect(() => {
+        // Read Data from .txt
+        const filePath = './om2m_data.txt';
+
+        fetch(process.env.PUBLIC_URL + filePath)
+            .then(response => response.text())
+            .then(data => {
+                // Parse the JSON string to get the variable
+                const parsedData = JSON.parse(data);
+                console.log("l90");
+                console.log(parsedData);
+            })
+            .catch(error => console.error('Error reading file:', error));
+    }, []); // The empty dependency array ensures that this effect runs only once when the component mounts
+
+    console.log('l96');
+
+    
+    // Initialize Variables
     const [arrays, setArrays] = useState([transpose(om2m_data)]);
     const [date, setDate] = useState('1');
     const [formSubmitted, setFormSubmitted] = useState(false);
