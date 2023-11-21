@@ -1,4 +1,3 @@
-import React from 'react';
 import specs_image1 from './specs_images/one.png'
 import specs_image2 from './specs_images/two.png'
 import specs_image3 from './specs_images/three.png'
@@ -120,6 +119,33 @@ export const sensors = [
     lower_bound: 1000,
     upper_bound: 3500,
     parameter: "Light intensity"
+  },
+  {
+    id: 4,
+    name: "pH Sensor",
+    text: "Measures Soil pH",
+    link: "https://thingspeak.com/channels/2287877/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH+Sensor&type=line",
+    lower_bound: 0,
+    upper_bound: 14,
+    parameter: "pH Value"
+  },
+  {
+    id: 5,
+    name: "SGP30 Sensor for CO2",
+    text: "Measures CO2",
+    link: "https://thingspeak.com/channels/2287877/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=SGP30++Sensor+%28CO2%29&type=line",
+    lower_bound: 400,
+    upper_bound: 700,
+    parameter: "CO2in ppm"
+  },
+  {
+    id: 6,
+    name: "SGP30 Sensor for VOC",
+    text: "Measures VOC",
+    link: "https://thingspeak.com/channels/2287877/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=SGP30+Sensor+%28VOC%29&type=line&yaxis=VOC+in+ppb",
+    lower_bound: 0,
+    upper_bound: 25,
+    parameter: "VOC in ppb"
   }
 ]
 
