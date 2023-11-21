@@ -1,12 +1,13 @@
 
 .center {
-  height: 40vh;
-  width: 50vw;
+  height: 22vh;
+  width: 30vw;
   position: relative;
   padding: 50px 50px;
   background: #000;
   border-radius: 10px;
   margin:10vh 25vw;
+  margin-left:35vw;
 }
 .center h1 {
   font-size: 2em;
@@ -20,7 +21,7 @@
 }
 .center .inputbox {
   position: relative;
-  width: 300px;
+  /* width: 400px; */
   height: 50px;
   margin-bottom: 50px;
   /* background-color: red; */

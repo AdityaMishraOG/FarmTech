@@ -150,6 +150,9 @@ export const sensors = [
 ]
 
 
+export const start_index = [0, 0, 9, 20, 27, 38, 51, 60, 72, 79, 90, 101];
+
+
 export const om2m_data = [
   [400, 34.0, 6.22, 23.48, 1306, 11],
   [454, 28.0, 6.44, 29.66, 994, 4],
