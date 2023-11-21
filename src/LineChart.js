@@ -4,7 +4,17 @@ import { Chart, LineElement, CategoryScale, LinearScale, PointElement } from 'ch
 
 Chart.register(LineElement, CategoryScale, LinearScale, PointElement);
 
-const LineChart = ({ data, labels }) => {
+const LineChart = ({ id, name, data, labels }) => {
+
+    // CSS
+    const chartContainerStyle = {
+        width: '500px', // Set the width of the container
+        height: '300px', // Set the height of the container
+        margin: '20px', // Add margin if needed
+        border: '1px solid #ccc', // Add border for visualization
+        padding: '10px', // Add padding if needed
+    };
+
     const chartRef = useRef(null);
 
     useEffect(() => {
@@ -15,11 +25,12 @@ const LineChart = ({ data, labels }) => {
         };
     }, []);
 
+
     const chartData = {
         labels: labels,
         datasets: [
             {
-                label: 'Array 1',
+                label: name,
                 data: data,
                 fill: false,
                 borderColor: 'rgba(75,192,192,1)',
@@ -40,9 +51,9 @@ const LineChart = ({ data, labels }) => {
     };
 
     return (
-        <div>
-            <h2>Line Chart</h2>
-            <Line ref={chartRef} data={chartData} options={options} />
+        <div style={chartContainerStyle}>
+            <h3>{name}</h3>
+            <Line key={id} ref={chartRef} data={chartData} options={options} />
         </div>
     );
 };

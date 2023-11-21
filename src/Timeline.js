@@ -3,15 +3,17 @@ import Navbar from './Navbar';
 import "./timeline.css"
 import ParseData from './ParseData';
 import LineChart from './LineChart';
+import { sensors } from './data';
+import { om2m_data } from './data';
 
-const PlotArray = ({ array }) => {
+
+const PlotArray = ({ id, name, array }) => {
     // Assuming you have the array passed as a prop
     const labels = array.map((value, index) => index);
-
     return (
         <div class="plot_array">
             {/* Other components or content */}
-            <LineChart data={array} labels={labels} />
+            <LineChart key={id} name={name} data={array} labels={labels} />
         </div>
     );
 };
@@ -103,50 +105,40 @@ class DateForm extends React.Component {
     }
 }
 
-// class NewsletterForm extends React.Component {
-
-
-//     render() {
-//         return (
-//             <div className="center">
-//                 <form>
-//                     <div className="inputbox">
-//                         <input type="text" required="required" value={this.state.startDate}
-//                             onChange={this.handleStartDateChange} />
-//                         <span>Start Date</span>
-//                     </div>
-//                     <div className="inputbox">
-//                         <input type="text" required="required" value={this.state.endDate}
-//                             onChange={this.handleEndDateChange} />
-//                         <span>End Date</span>
-//                     </div>
-//                     <div className="inputbox">
-//                         <button id="submit_button" type="button" onClick={this.handleClick}>
-//                             Submit
-//                         </button>
-//                     </div>
-//                 </form>
-//             </div>
-//         );
-//     }
-// }
+// Transpose function to convert rows to columns
+// const transpose = (matrix) => matrix[0].map((_, colIndex) => matrix.map((row) => row[colIndex]));
+const transpose = (matrix) => {
+    return matrix[0].map((_, colIndex) => {
+        return matrix.map((row) => {
+            return row[colIndex] !== null ? row[colIndex] : 0;
+        });
+    });
+};
 
 
 
 function Timeline() {
-    const [dataArray, setDataArray] = useState([1, 2, 3, 4]);
+    // const [dataArray, setDataArray] = useState([1, 2, 3, 4]);
+    const [arrays, setArrays] = useState([transpose(om2m_data)]);
+
     return (
         <>
             <Navbar />
-            {/* <h2>Timeline Page</h2> */}
-            {/* <NewsletterForm /> */}
-            {/* <DateForm /> */}
-            <PlotArray array={dataArray} />
-            <PlotArray array={dataArray} />
-            <PlotArray array={dataArray} />
-            <PlotArray array={dataArray} />
-            <PlotArray array={dataArray} />
-            <PlotArray array={dataArray} />
+            <div className="title">
+                <h2 style={{ marginTop: "2vh" }}>Timeline</h2>
+                <div className="underline"></div>
+            </div>
+            <DateForm />
+
+            <div id="plots_container">
+                {sensors.map((sensor) => {
+                    const id = sensor.id;
+                    const name = sensor.name;
+                    return (
+                        <PlotArray className="each_plot" key={id} name={name} array={arrays[0][id - 1]} />
+                    );
+                })}
+            </div>
 
         </>
     );

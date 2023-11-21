@@ -86,7 +86,16 @@
 }
 
 
-.plot_array {
+#plots_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-rows: repeat(3, 1fr); /* Three rows */
+  gap: 10px; /* Adjust the gap between grid items as needed */
+  margin: 5vh 5vw;
+  margin-left:18vw;
+}
+.each_plot {
+  border: 1px solid #ccc; 
+  padding: 10px;
 
-  height: 20vh;
 }
