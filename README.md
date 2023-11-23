@@ -12,7 +12,7 @@ Run the following commands in your terminal
 ## Team members
 - [Aditya Mishra](https://github.com/AdityaMishraOG/)
 - [Chirag Dhamija](https://github.com/chiragdhamija)
-- [Namrata Baliga]()
+- [Namrata Baliga](https://github.com/namsB7)
 - [Sanchit Jalan](https://github.com/sanchit27-jalan)
 
   
