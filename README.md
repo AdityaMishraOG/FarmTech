@@ -3,6 +3,7 @@ The ESW Project by Team 10 focuses on Smart Farming and utilizes Thingspeak as i
 
 ## Steps to run the website
 Run the following commands in your terminal
+- cd Website
 - npm install
 - npm install react-icons
 - npm install react-router-dom
