@@ -33,7 +33,7 @@ const LineChart = ({ id, name, data, labels }) => {
                 label: name,
                 data: data,
                 fill: false,
-                borderColor: 'rgba(75,192,192,1)',
+                borderColor: 'rgba(95,192,192,1)',
                 tension: 0.1,
             },
         ],
