@@ -1,5 +1,8 @@
 # FarmTech
-The ESW Project by Team 10 focuses on Smart Farming and utilizes Thingspeak as its IoT platform. The project's web interface is developed using React.
+The Project by Team 10 focuses on Smart Farming and utilizes Thingspeak as its IoT platform. The project's web interface is developed using React. 
+
+**Course Code:** EC3.202  
+**Course Name:** Embedded Systems Workshop  
 
 ## Steps to run the website
 Run the following commands in your terminal
